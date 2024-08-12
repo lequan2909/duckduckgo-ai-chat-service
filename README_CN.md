@@ -1,23 +1,29 @@
 # Duckduckgo AI Chat Service
 
+![Docker Pulls](https://img.shields.io/docker/pulls/mumulhl/duckduckgo-ai-chat-service)
+![GitHub Tag](https://img.shields.io/github/v/tag/mumu-lhl/duckduckgo-ai-chat-service)
+
 [English](./README.md) | 中文
 
-为 [Duckduckgo AI Chat](https://duckduckgo.com/aichat) 提供兼容 OpenAI 的 API，可以免费使用 gpt-4o-mini。
+为 [Duckduckgo AI Chat](https://duckduckgo.com/aichat) 提供兼容 OpenAI 的 API，可以免费使用 gpt-4o-mini、claude-3-haiku、llama3.1...
 
 ## 部署
 
-### Deno
+### Render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/mumu-lhl/duckduckgo-ai-chat-service)
+
+### Docker
 
 ```sh
-# 直接运行
-deno run --allow-env --allow-net --unstable https://raw.githubusercontent.com/mumu-lhl/duckduckgo-ai-chat-service/main/main.ts
-
-# 安装后运行
-deno install -g --allow-env --allow-net --unstable -n duckduckgo-ai-chat-service https://raw.githubusercontent.com/mumu-lhl/duckduckgo-ai-chat-service/main/main.ts
-duckduckgo-ai-chat-service
+docker run -d mumulhl/duckduckgo-ai-chat-service
 ```
 
 ### Deno Deploy
+
+#### Web
+
+fork 本项目，访问 <https://dash.deno.com>，登录后点击创建新项目。
 
 #### 命令行
 
@@ -27,9 +33,16 @@ deno install -A jsr:@deno/deployctl
 deployctl deploy
 ```
 
-#### Web
+### Deno
 
-fork 本项目，访问 <https://dash.deno.com>，登录后点击创建新项目。
+```sh
+# 直接运行
+deno run --allow-env --allow-net --unstable-cron https://raw.githubusercontent.com/mumu-lhl/duckduckgo-ai-chat-service/main/main.ts
+
+# 安装后运行
+deno install -g --allow-env --allow-net --unstable-cron -n duckduckgo-ai-chat-service https://raw.githubusercontent.com/mumu-lhl/duckduckgo-ai-chat-service/main/main.ts
+duckduckgo-ai-chat-service
+```
 
 ## 配置
 
